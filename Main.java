@@ -1,23 +1,40 @@
-import javax.swing.JFrame;  //Importar la clase JFrame para crear una ventana.
-import javax.swing.JLabel;  //Importar la clase JLabel para mostrar texto en la ventana.
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.*;
+
+import Vistas.LoginView;
 
 public class Main {         //Define la clase principal llamada Main.
 
     public static void main(String[] args) {    // Método principal donde inicia la ejecución del programa.
         
         
-        //Crear una ventana con JFrame
+        //Ventana
         JFrame miVentana = new JFrame();        // Crea una objeto JFrame (ventana).
         miVentana.setTitle("Hospital SCL");     // Establece el título de la ventana.
-        miVentana.setSize(900, 800);            // Define el tamaño de la ventana: 900px ancho, 800px alto.
-        miVentana.setVisible(true);             // Establecer si la ventana es visible en la pantalla.
+        miVentana.setSize(1000, 800);            // Define el tamaño de la ventana: 900px ancho, 800px alto.
+        miVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        miVentana.setLayout(new BorderLayout());
 
-        //Crear un texto con JLabel
-        JLabel texto = new JLabel();            // Crear un JLabel (etiqueta de texto).
-        texto.setText("Hola mundo");            // Asigna texto a la etiqueta.
-        miVentana.add(texto);                   // Asigna un texto a la etiqueta.
 
-        miVentana.setVisible(true);             //HAce visible la ventana
+
+        //Panel banner
+        JPanel panelBanner = new  JPanel();
+        panelBanner.setPreferredSize(new Dimension(500,800));
+        panelBanner.setOpaque(true);
+        panelBanner.setBackground(Color.RED);
+        miVentana.add(panelBanner, BorderLayout.WEST);
+
+
+        //Panel login
+        LoginView panelLogin = new LoginView();
+        miVentana.add(panelLogin.getJPanel(), BorderLayout.CENTER);
+
+
+    
+        miVentana.setVisible(true);             //Hace visible la ventana
     }
     
 }
