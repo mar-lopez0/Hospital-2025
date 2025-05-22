@@ -4,37 +4,37 @@ import java.awt.Dimension;
 
 import javax.swing.*;
 
-import Vistas.LoginView;
+import Vistas.LoginPanel;
 
-public class Main {         //Define la clase principal llamada Main.
+public class Main {         
 
-    public static void main(String[] args) {    // Método principal donde inicia la ejecución del programa.
+    public static void main(String[] args) {  
         
         
         //Ventana
-        JFrame miVentana = new JFrame();        // Crea una objeto JFrame (ventana).
-        miVentana.setTitle("Hospital SCL");     // Establece el título de la ventana.
-        miVentana.setSize(1000, 800);            // Define el tamaño de la ventana: 900px ancho, 800px alto.
+        JFrame miVentana = new JFrame();      
+        miVentana.setTitle("Hospital SCL");     
+        miVentana.setSize(1000, 800);            
         miVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         miVentana.setLayout(new BorderLayout());
 
 
 
         //Panel banner
-        JPanel panelBanner = new  JPanel();
+        JPanel panelBanner = new  JPanel();                     
         panelBanner.setPreferredSize(new Dimension(500,800));
-        panelBanner.setOpaque(true);
+        panelBanner.setOpaque(true);                            
         panelBanner.setBackground(Color.RED);
         miVentana.add(panelBanner, BorderLayout.WEST);
 
 
         //Panel login
-        LoginView panelLogin = new LoginView();
-        miVentana.add(panelLogin.getJPanel(), BorderLayout.CENTER);
+        LoginPanel panelLogin = new LoginPanel();
+        miVentana.add(panelLogin.getPanel(), BorderLayout.CENTER);
 
 
     
-        miVentana.setVisible(true);             //Hace visible la ventana
+        miVentana.setVisible(true); //Hace visible la ventana
     }
     
 }
