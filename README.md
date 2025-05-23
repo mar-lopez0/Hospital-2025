@@ -1,12 +1,15 @@
 # Hospital-2025
 
-https://github.com/mar-lopez0/Portafolio-de-Java/blob/main/Porgrama.png?raw=true
+![image](https://github.com/user-attachments/assets/c06eea2c-8b4d-4645-978c-4dd381546833)
+
 
 ###Sistema de Carpetas
+
+├── BannerPanel.java
 ├── Main.java
 ├── Modulos
 │   └── modulos.java
 ├── README.md
 └── Vistas
-    ├── LoginView.java
-    └── vistas.java
+    ├── BannerPanel.java
+    └── LoginPanel.java
