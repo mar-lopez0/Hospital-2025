@@ -5,9 +5,13 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class LoginPanel {
+import javax.swing.*;
+import Ventanas.Dashboard;
+
+public class LoginPanel{
 
     
     private JPanel panelLogin;
@@ -72,6 +76,15 @@ public class LoginPanel {
         gbc.anchor = GridBagConstraints.EAST;               
         gbc.fill = GridBagConstraints.NONE;                  
         panelLogin.add(entradaBoton, gbc);
+
+        entradaBoton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+               new Dashboard().getDashboard();
+            }
+            
+        });
     }
 
 
