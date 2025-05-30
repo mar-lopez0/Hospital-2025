@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 import Ventanas.Dashboard;
+import control.LoginControler;
 
 public class LoginPanel{
 
@@ -33,8 +34,6 @@ public class LoginPanel{
         gbc.weightx = 1.0;                                     
 
         
-
-        
         JLabel titulo = new JLabel("Login", SwingConstants.CENTER);
         gbc.anchor = GridBagConstraints.CENTER;               
         gbc.gridx = 0;
@@ -54,7 +53,7 @@ public class LoginPanel{
         gbc.gridx = 1;
         gbc.gridy = 1;
         panelLogin.add(entradaCorreo, gbc);
-
+        
         
         JLabel labelContra = new JLabel("Contraseña:");
         gbc.gridx = 0;
@@ -77,12 +76,32 @@ public class LoginPanel{
         gbc.fill = GridBagConstraints.NONE;                  
         panelLogin.add(entradaBoton, gbc);
 
+        //Datos del usuario temporal
+        String usuario = "marlopez";
+        String entradacontra = "mar123";
+
         entradaBoton.addActionListener(new ActionListener() {
             @Override
+
             public void actionPerformed(ActionEvent e) {
 
-               new Dashboard().getDashboard();
+                //Recupera datos
+                String entradausuario = entradaCorreo.getText();
+                String entradacontra = labelContra.getText();
+
+                if (new LoginControler().validacionDatos(entradausuario, entradacontra)) {
+                    
+                }
+
+                
+                    
+                
+                Dashboard dashboard = new Dashboard();
+                dashboard.setVisible(true);
+            
             }
+            
+            
             
         });
     }
@@ -91,4 +110,6 @@ public class LoginPanel{
     public JPanel getPanel() {
         return panelLogin;
     }
+
 }
+    
