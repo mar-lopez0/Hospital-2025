@@ -4,7 +4,7 @@ import java.awt.Dimension;
 
 import javax.swing.*;
 
-import Vistas.LoginPanel;
+import Vistas.LoginPanel.*;
 
 public class Main {         
 
